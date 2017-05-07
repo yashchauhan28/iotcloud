@@ -16,7 +16,7 @@ router.get("/update", function(req, res) {
         if (err) {
             console.log("Error retrieving dataset: " + err);
             res.sendStatus(-1);
-        } else if (dataset.data) {
+        } else if (dataset) {
           console.log("all okay..");
             for (var property in req.query) {
                 if (req.query.hasOwnProperty(property)&dataset.data.hasOwnProperty(property)) {
@@ -46,7 +46,7 @@ router.get("/update", function(req, res) {
 router.get("/request", function(req, res) {
 
     var apiKey = req.query.key;
-
+    console.log("api key is " , apiKey);
     Dataset.findOne({read_key: apiKey}, function(err, dataset) {
         if (err) {
             console.log("Error retrieving dataset: " + err);

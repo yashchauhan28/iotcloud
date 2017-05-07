@@ -19,4 +19,5 @@ block content
                     Save changes
             form(action="users/#{user._id}/", method="POST", name="deleteUser")
                 input(type="hidden", value="DELETE", name="_method")
-                button.btn.btn-danger.pull-right(type="submit") Delete account
+                button.btn.btn-danger(type="submit").
+                    Delete account
